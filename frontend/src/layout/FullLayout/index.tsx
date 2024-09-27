@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
-import { UserOutlined, DashboardOutlined,HistoryOutlined, DownOutlined,CommentOutlined , WarningOutlined} from "@ant-design/icons";
+import { UserOutlined, DashboardOutlined, HistoryOutlined, DownOutlined, CommentOutlined, WarningOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, Button, message, Dropdown } from "antd";
 import logo from "../../assets/logo.png";
 import Home from "../../pages/home";
@@ -155,6 +155,21 @@ const FullLayout: React.FC = () => {
         </Menu.Item>
       )}
       <Menu.Item
+        key="/reviewall"
+        onClick={() => setCurrentPage("rentmanager")}
+        style={{
+          borderRadius: '4px',
+          transition: 'background 0.3s',
+          background: location.pathname === "/reviewall" ? "#1a2a40" : "transparent",
+          color: '#FFD700'
+        }}
+      >
+        <Link to="/reviewall" style={{ display: 'flex', alignItems: 'center', color: '#FFD700', fontFamily: 'Kanit, sans-serif' }}>
+          <CommentOutlined style={{ marginRight: '8px' }} />
+          <span>Review</span>
+        </Link>
+      </Menu.Item>
+      <Menu.Item
         key="logout"
         style={{
           fontFamily: 'Kanit, sans-serif',
@@ -261,7 +276,7 @@ const FullLayout: React.FC = () => {
                   </Menu.Item>
                 )}
 
-                
+
 
                 {roles !== 1 && (
                   <Menu.Item
@@ -280,22 +295,6 @@ const FullLayout: React.FC = () => {
                     </Link>
                   </Menu.Item>
                 )}
-                <Menu.Item
-                  key="/reviewall"
-                  onClick={() => setCurrentPage("rentmanager")}
-                  style={{
-                    borderRadius: '4px',
-                    transition: 'background 0.3s',
-                    background: location.pathname === "/reviewall" ? "#1a2a40" : "transparent",
-                    color: '#FFD700'
-                  }}
-                  
-                >
-                  <Link to="/reviewall" style={{ display: 'flex', alignItems: 'center', color: '#FFD700', fontFamily: 'Kanit, sans-serif' }}>
-                    <CommentOutlined style={{ marginRight: '8px' }} />
-                    <span>Review</span>
-                  </Link>
-                </Menu.Item>
                 {roles !== 1 && (
                   <Menu.Item key="/adminreport"
                     onClick={() => setCurrentPage("adminreport")}
