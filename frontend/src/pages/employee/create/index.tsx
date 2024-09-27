@@ -211,11 +211,11 @@ function CreateEmployee() {
                 <Input.Password style={{ width: "100%", fontSize: "16px", borderRadius: "8px", border: "1px solid #003366" }} />
               </Form.Item>
             </Col>
-
             <Col xs={24} sm={24} md={12}>
               <Form.Item
-                label={<span style={{ fontSize: '16px', color: '#003366', fontFamily: 'Kanit, sans-serif' }}>รูปภาพ</span>}
+                label={<span style={{ fontSize: "16px", color: "#003366", fontFamily: "Kanit, sans-serif" }}>รูปภาพ</span>}
                 name="picture"
+                rules={[{ required: true, message: "กรุณาอัปโหลดรูปภาพ !" }]} // ตรวจสอบรูปภาพที่อัปโหลด
               >
                 <Upload
                   customRequest={({ file, onSuccess }) => {
@@ -225,43 +225,45 @@ function CreateEmployee() {
                   showUploadList={false}
                 >
                   <Button
+                    
                     style={{
-                      fontSize: '16px',
-                      borderRadius: '8px',
-                      border: '1px solid #003366',
-                      backgroundColor: '#003366',
-                      color: '#FFD700',
-                      transition: 'background-color 0.3s ease',
+                      fontSize: "16px",
+                      borderRadius: "8px",
+                      border: "1px solid #003366",
+                      backgroundColor: "#003366",
+                      color: "#FFD700",
+                      transition: "background-color 0.3s ease",
                     }}
-                    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#FFD700')}
-                    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#003366')}
+                    onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#FFD700")}
+                    onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#003366")}
                   >
                     Upload
                   </Button>
                 </Upload>
-              </Form.Item>
-              {image && (
-                <div style={{
-                  marginTop: '16px',
-                  textAlign: 'center',
-                  borderRadius: '8px',
-                  border: '1px solid #003366',
-                  overflow: 'hidden',
-                }}>
-                  <Image
-                    width={300}
-                    height={200}
-                    src={image}
-                    style={{
-                      objectFit: 'cover',
-                      borderRadius: '8px',
-                    }}
-                  />
-                </div>
-              )}
-            </Col>
 
-            <Row justify="end" style={{ marginTop: "150px", marginLeft: "350px"}}>
+                {image && (
+                  <div style={{
+                    marginTop: '16px',
+                    textAlign: 'center',
+                    borderRadius: '8px',
+                    border: '1px solid #003366',
+                    overflow: 'hidden',
+                  }}>
+                    <Image
+                      width={300}
+                      height={200}
+                      src={image}
+                      style={{
+                        objectFit: 'cover',
+                        borderRadius: '8px',
+                      }}
+                    />
+                  </div>
+                )}
+              </Form.Item>
+            </Col>
+            </Row>
+            <Row justify="end" style={{ marginTop: "50px", marginLeft: "350px"}}>
               <Col >
                 <Form.Item>
                   <Space>
@@ -297,7 +299,6 @@ function CreateEmployee() {
                 </Form.Item>
               </Col>
             </Row>
-          </Row>
         </Form>
       </Card>
     </div>

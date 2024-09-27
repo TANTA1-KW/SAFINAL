@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Space, Table, Button, Modal, Col, Row, Divider, message, Typography } from "antd";
+import { Space, Table, Button, Modal, Col, Row, Divider, message, Typography, Avatar } from "antd"; // Import Avatar component
 import { PlusOutlined, EditOutlined, DeleteOutlined, FieldTimeOutlined } from "@ant-design/icons";
 import type { ColumnsType } from "antd/es/table";
 import { GetUsers, DeleteUsersById } from "../../services/https/index";
@@ -34,6 +34,11 @@ const styles = {
   table: {
     marginTop: '20px',
   },
+  avatar: {
+    width: 50,
+    height: 50,
+    borderRadius: '50%',
+  }
 };
 
 function EmployeePage() {
@@ -81,6 +86,14 @@ function EmployeePage() {
   };
 
   const columns: ColumnsType<UsersInterface> = [
+    {
+      title: "",
+      dataIndex: "picture",
+      key: "picture",
+      render: (picture) => (
+        <Avatar src={picture} style={styles.avatar} />
+      ),
+    },
     {
       title: "ตำแหน่ง",
       dataIndex: "roles",
