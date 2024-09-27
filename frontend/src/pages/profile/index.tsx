@@ -189,15 +189,17 @@ function ProfilePage() {
                 </Space>
               </Form.Item>
             </Col>
-            <Col style={{ marginTop: "40px", marginLeft: "20px" }}>
-              <Form.Item>
-                <Space>
-                  <Link to="/profile/leave">
-                    <Button type="primary" style={styles.button}>ลางาน</Button>
-                  </Link>
-                </Space>
-              </Form.Item>
-            </Col>
+            {(user.roles === 0 || user.roles === 2) && (
+              <Col style={{ marginTop: "40px", marginLeft: "20px" }}>
+                <Form.Item>
+                  <Space>
+                    <Link to="/profile/leave">
+                      <Button type="primary" style={styles.button}>ลางาน</Button>
+                    </Link>
+                  </Space>
+                </Form.Item>
+              </Col>
+            )}
           </Row>
         </Form>
       </Card>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
-import { UserOutlined, DashboardOutlined, DownOutlined, WarningOutlined} from "@ant-design/icons";
+import { UserOutlined, DashboardOutlined,HistoryOutlined, DownOutlined,CommentOutlined , WarningOutlined} from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, Button, message, Dropdown } from "antd";
 import logo from "../../assets/logo.png";
 import Home from "../../pages/home";
@@ -135,7 +135,7 @@ const FullLayout: React.FC = () => {
             borderRadius: '4px',
           }}
         >
-          <UserOutlined style={{ marginRight: '8px', color: '#FFD700' }} />
+          <HistoryOutlined style={{ marginRight: '8px', color: '#FFD700' }} />
           History
         </Menu.Item>
       )}
@@ -292,7 +292,7 @@ const FullLayout: React.FC = () => {
                   
                 >
                   <Link to="/reviewall" style={{ display: 'flex', alignItems: 'center', color: '#FFD700', fontFamily: 'Kanit, sans-serif' }}>
-                    <UserOutlined style={{ marginRight: '8px' }} />
+                    <CommentOutlined style={{ marginRight: '8px' }} />
                     <span>Review</span>
                   </Link>
                 </Menu.Item>
