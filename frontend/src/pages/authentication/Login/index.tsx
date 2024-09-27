@@ -129,14 +129,6 @@ const SignInPages = () => {
           </Form.Item>
 
           <Form.Item>
-            <Form.Item name="autoLogin" valuePropName="checked" noStyle>
-              <Checkbox style={{ color: 'white', fontFamily: 'Kanit, sans-serif' }}>Remember me</Checkbox>
-            </Form.Item>
-
-            <a style={{ float: 'right', fontSize: 12, color: 'white', fontFamily: 'Kanit, sans-serif' }}>Forgot password?</a>
-          </Form.Item>
-
-          <Form.Item>
           <Button
               type="primary"
               htmlType="submit"

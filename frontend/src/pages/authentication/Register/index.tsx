@@ -178,6 +178,24 @@ const SignUpPages = () => {
             
           </Row>
           <Row gutter={[16, 16]}>
+  <Col span={24}>
+    <Form.Item
+      label={<span style={{ fontSize: '16px', color: 'white', fontFamily: 'Kanit, sans-serif' }}>Phone Number</span>}
+      name="phone"
+      rules={[
+        { required: true, message: 'Please input your phone number!' }, 
+      ]}
+    >
+      <Input
+        size="large"
+        placeholder="Phone Number"
+        style={{ borderRadius: '4px', backgroundColor: 'white', color: 'black', fontFamily: 'Kanit, sans-serif' }}
+      />
+    </Form.Item>
+  </Col>
+</Row>
+
+          <Row gutter={[16, 16]}>
           <Col span={12}>
               <Form.Item
                 label={<span style={{ fontSize: '16px', color: 'white', fontFamily: 'Kanit, sans-serif' }}>Date of Birth</span>}
